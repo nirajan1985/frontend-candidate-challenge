@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 
-import { TodoList } from "./components/TodoList";
+import { TodoContainer } from "./components/TodoContainer";
 
 import "./styles.scss";
 
+export interface Todo {
+  id: number;
+  text: string;
+  done: boolean;
+}
+
 export default function App() {
-  const [todos] = useState([
-    { text: "Buy milk", done: true },
-    { text: "Buy bread", done: false },
+  const [todos, setTodos] = useState<Todo[]>([
+    { id: Math.random(), text: "Buy milk", done: true },
+    { id: Math.random(), text: "Buy bread", done: false },
   ]);
 
+  console.log(todos);
   return (
     <div className="todoListApp">
       <div className="forsta-logo" />
-      <TodoList todos={todos} />
+
+      <TodoContainer todos={todos} setTodos={setTodos} />
     </div>
   );
 }
