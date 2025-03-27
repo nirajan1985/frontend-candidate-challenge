@@ -27,6 +27,10 @@ body {
 .todoListApp button:hover {
   cursor: pointer;
 }
+.todoListApp button:disabled {
+  background-color:gray;
+  cursor:not-allowed;
+}
 .todoListApp .todoList {
   list-style: none;
   padding-left: 0;

@@ -25,7 +25,9 @@ export const InputTodoForm = ({
         onChange={(e) => setNewtodoText(e.target.value)}
         placeholder="Enter new todo"
       />
-      <button onClick={handleSubmit}>{buttonLabel}</button>
+      <button onClick={handleSubmit} disabled={newtodoText.trim() === ""}>
+        {buttonLabel}
+      </button>
     </div>
   );
 };
