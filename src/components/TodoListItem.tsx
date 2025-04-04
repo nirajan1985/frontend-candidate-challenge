@@ -17,7 +17,7 @@ export const TodoListItem = ({
 }: TodoListItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
-  const startEditing = (currentText: string) => {
+  const startEditing = () => {
     setIsEditing(true);
   };
   const saveEditing = (id: number, text: string) => {
@@ -47,7 +47,7 @@ export const TodoListItem = ({
       ) : (
         <>
           <span className={todo.done ? "done" : ""}>{todo.text}</span>
-          <button onClick={() => startEditing(todo.text)}>Edit</button>
+          <button onClick={() => startEditing()}>Edit</button>
         </>
       )}
 
